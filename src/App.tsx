@@ -29,6 +29,7 @@ import {
   ClientsPageEdit,
   ClientsPageList,
 } from "./pages/clients";
+import { InvoicePageList } from "./pages/invoices";
 import "@refinedev/antd/dist/reset.css";
 import "./styles/custom.css";
 
@@ -55,6 +56,12 @@ const App: React.FC = () => {
                   list: "/clients",
                   create: "/clients/new",
                   edit: "/clients/:id/edit",
+                },
+                {
+                  name: "invoices",
+                  list: "/invoices",
+                  show: "/invoices/:id",
+                  create: "/invoices/new",
                 },
               ]}
               options={{
@@ -119,6 +126,10 @@ const App: React.FC = () => {
                     path="/clients/:id/edit"
                     element={<ClientsPageEdit />}
                   />
+
+                  <Route path="/invoices">
+                    <Route index element={<InvoicePageList />} />
+                  </Route>
                 </Route>
 
                 <Route
