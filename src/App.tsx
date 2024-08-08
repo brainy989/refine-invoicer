@@ -29,7 +29,11 @@ import {
   ClientsPageEdit,
   ClientsPageList,
 } from "./pages/clients";
-import { InvoicePageList } from "./pages/invoices";
+import {
+  InvoicePageList,
+  InvoicesPageCreate,
+  InvoicesPageShow,
+} from "./pages/invoices";
 import "@refinedev/antd/dist/reset.css";
 import "./styles/custom.css";
 
@@ -129,6 +133,8 @@ const App: React.FC = () => {
 
                   <Route path="/invoices">
                     <Route index element={<InvoicePageList />} />
+                    <Route path="new" element={<InvoicesPageCreate />} />
+                    <Route path=":id" element={<InvoicesPageShow />} />
                   </Route>
                 </Route>
 
